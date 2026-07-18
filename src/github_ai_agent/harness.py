@@ -141,6 +141,22 @@ class AgentHarness:
         if not has_project_term:
             return IntentDecision(Intent.GENERAL_QUESTION, False)
 
+        # A definitional/conceptual question ("깃허브에서 PR이 뭐야?", "이슈가
+        # 뭔가요?") happens to contain project terms but needs no repository
+        # access. Route it as a general question so it never opens the GitHub
+        # MCP session -- unless it also refers to *this* project ("우리/이
+        # 저장소/방금"), which signals a real lookup rather than a definition.
+        _DEFINITION_MARKERS = (
+            "뭐야", "뭐예요", "뭐에요", "뭔가요", "뭔지", "뭐임",
+            "무엇인", "뜻", "의미", "개념",
+            "what is", "what are", "what's", "define", "explain",
+        )
+        _PROJECT_REFERENCE_MARKERS = ("우리", "our", "이 저장소", "이 프로젝트", "방금")
+        if any(term in text for term in _DEFINITION_MARKERS) and not any(
+            term in text for term in _PROJECT_REFERENCE_MARKERS
+        ):
+            return IntentDecision(Intent.GENERAL_QUESTION, False)
+
         service_terms = ("notion", "노션", "calendar", "캘린더")
         project_operation_terms = (
             "github", "깃허브", "프로젝트", "이슈", "issue", "pr", "커밋",
