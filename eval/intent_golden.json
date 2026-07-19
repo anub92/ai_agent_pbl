@@ -1,0 +1,51 @@
+{
+  "_about": "의도 분류 골든셋. needs_context = 답하려면 '이 저장소의 실시간 데이터(커밋/이슈/PR/파일/팀원)'에 접근해야 하는가. 정의/인사/일반지식 = false. category는 채점에 쓰지 않고 분류 리포트용.",
+  "cases": [
+    {"question": "깃허브에서 PR이 뭐야?", "needs_context": false, "category": "definition"},
+    {"question": "PR이 뭐야?", "needs_context": false, "category": "definition"},
+    {"question": "풀 리퀘스트가 뭔지 설명해줘", "needs_context": false, "category": "definition"},
+    {"question": "이슈가 뭔가요?", "needs_context": false, "category": "definition"},
+    {"question": "깃 커밋이 뭐야?", "needs_context": false, "category": "definition"},
+    {"question": "브랜치 개념 알려줘", "needs_context": false, "category": "definition"},
+    {"question": "readme가 뭐야?", "needs_context": false, "category": "definition"},
+    {"question": "리드미가 무엇인지 알려줘", "needs_context": false, "category": "definition"},
+    {"question": "깃허브 워크플로가 무엇인가요?", "needs_context": false, "category": "definition"},
+    {"question": "커밋의 의미가 뭐야?", "needs_context": false, "category": "definition"},
+    {"question": "코드 리뷰가 뭐야?", "needs_context": false, "category": "definition"},
+    {"question": "노션이 뭐야?", "needs_context": false, "category": "definition"},
+    {"question": "워크플로가 뭐야?", "needs_context": false, "category": "definition"},
+    {"question": "이슈가 뭐야?", "needs_context": false, "category": "definition"},
+
+    {"question": "안녕", "needs_context": false, "category": "greeting"},
+    {"question": "안녕하세요 반가워요", "needs_context": false, "category": "greeting"},
+    {"question": "고마워", "needs_context": false, "category": "greeting"},
+
+    {"question": "오늘 날씨 어때?", "needs_context": false, "category": "general"},
+    {"question": "파이썬이 뭐야?", "needs_context": false, "category": "general"},
+    {"question": "점심 메뉴 추천해줘", "needs_context": false, "category": "general"},
+
+    {"question": "우리 저장소 열린 PR 알려줘", "needs_context": true, "category": "lookup"},
+    {"question": "최근 커밋 목록 보여줘", "needs_context": true, "category": "lookup"},
+    {"question": "이 저장소 최근 변경사항 뭐야?", "needs_context": true, "category": "lookup"},
+    {"question": "열린 이슈 몇 개야?", "needs_context": true, "category": "lookup"},
+    {"question": "우리 저장소 이슈 목록 뭐 있어?", "needs_context": true, "category": "lookup"},
+    {"question": "main 브랜치에 뭐 바뀌었어?", "needs_context": true, "category": "lookup"},
+    {"question": "최근에 누가 뭐 커밋했어?", "needs_context": true, "category": "lookup"},
+
+    {"question": "우리 팀 오늘 할 일 배분해줘", "needs_context": true, "category": "task"},
+    {"question": "작업 배분해줘", "needs_context": true, "category": "task"},
+    {"question": "우선순위 높은 작업부터 나눠줘", "needs_context": true, "category": "task"},
+
+    {"question": "팀원이 누구야?", "needs_context": true, "category": "team"},
+    {"question": "우리 팀 구성원 알려줘", "needs_context": true, "category": "team"},
+    {"question": "이 프로젝트 참여자 누구야?", "needs_context": true, "category": "team"},
+
+    {"question": "이 브랜치 코드 리뷰해줘", "needs_context": true, "category": "review"},
+    {"question": "readme 갱신이 필요한지 봐줘", "needs_context": true, "category": "docs"},
+    {"question": "우리 프로젝트 지금 블로커 있어?", "needs_context": true, "category": "status"},
+    {"question": "지금 프로젝트 상태 어때?", "needs_context": true, "category": "status"},
+
+    {"question": "오늘 뭐부터 하면 좋을까?", "needs_context": true, "category": "hard"},
+    {"question": "지금 병목이 뭐야?", "needs_context": true, "category": "hard"}
+  ]
+}
